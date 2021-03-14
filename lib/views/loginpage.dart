@@ -1,4 +1,3 @@
-import 'package:bot_toast/bot_toast.dart';
 import 'package:chatApp/helper/helperfunction.dart';
 import 'package:chatApp/services/auth.dart';
 import 'package:chatApp/services/database.dart';
@@ -46,12 +45,10 @@ class _LoginPageState extends State<LoginPage> {
         if (value == 0) {
           setState(() {
             isLoading = false;
-            BotToast.showText(text: "user not Found");
           });
         } else if (value == 1) {
           setState(() {
             isLoading = false;
-            BotToast.showText(text: "Incorrect Password");
             passwController.text = null;
           });
         } else if (value != null) {
@@ -68,12 +65,10 @@ class _LoginPageState extends State<LoginPage> {
       if (value == 0) {
         setState(() {
           isLoading = false;
-          BotToast.showText(text: "user not Found");
         });
       } else if (value == 1) {
         setState(() {
           isLoading = false;
-          BotToast.showText(text: "Incorrect Password");
           passwController.text = null;
         });
       } else if (value != null) {
@@ -372,12 +367,7 @@ class _LoginPageState extends State<LoginPage> {
                                 borderRadius: BorderRadius.circular(25)),
                             elevation: 0.3,
                             height: 50,
-                            onPressed: () {
-                              // signinwithgoogle();
-                              BotToast.showText(
-                                  text:
-                                      'Feature will be added soon our team is working on it');
-                            },
+                            onPressed: () {},
                             color: Colors.white70,
                             child: Center(
                               child: Row(

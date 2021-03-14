@@ -1,5 +1,4 @@
 import 'dart:ui';
-import 'package:bot_toast/bot_toast.dart';
 import 'package:chatApp/helper/Constants.dart';
 import 'package:chatApp/helper/authenticate.dart';
 import 'package:chatApp/helper/helperfunction.dart';
@@ -22,27 +21,30 @@ class MainApp extends StatefulWidget {
 }
 
 class _MainAppState extends State<MainApp> {
-  final PageController _pageController = PageController();
+  PageController _pageController = PageController();
   int _index;
 
   @override
   void initState() {
     super.initState();
     _index = 0;
+    _pageController = PageController();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: PageView(
-          controller: _pageController,
-          children: pages.values.toList(),
-          onPageChanged: (int index) {
-            setState(() {
-              _index = index;
-              _pageController.jumpToPage(index);
-            });
-          }),
+      body: Container(
+        child: PageView(
+            controller: _pageController,
+            children: pages.values.toList(),
+            onPageChanged: (int index) {
+              setState(() {
+                _index = index;
+                _pageController.jumpToPage(index);
+              });
+            }),
+      ),
       bottomNavigationBar: CurvedNavigationBar(
         height: 50.0,
         index: _index,

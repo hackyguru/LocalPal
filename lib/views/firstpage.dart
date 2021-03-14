@@ -1,6 +1,5 @@
 import 'package:chatApp/helper/authenticate.dart';
 import 'package:flutter/material.dart';
-import 'package:bot_toast/bot_toast.dart';
 import 'package:chatApp/widget/fadeanimation.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:chatApp/widget/colors.dart';
@@ -9,10 +8,7 @@ import 'package:chatApp/views/loginpage.dart';
 class firstpage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        navigatorObservers: [BotToastNavigatorObserver()],
-        debugShowCheckedModeBanner: false,
-        home: first());
+    return MaterialApp(debugShowCheckedModeBanner: false, home: first());
   }
 }
 

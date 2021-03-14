@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:bot_toast/bot_toast.dart';
 import 'package:chatApp/helper/authenticate.dart';
 import 'package:chatApp/helper/helperfunction.dart';
 import 'package:chatApp/mainapp.dart';
@@ -67,8 +66,6 @@ class _AppState extends State<App> {
                 primaryColor: Color(0xfff833AB4),
                 accentColor: Color(0xfff5B51D8),
               ),
-              builder: BotToastInit(), //1. call BotToastInit
-              navigatorObservers: [BotToastNavigatorObserver()],
               debugShowCheckedModeBanner: false,
               home: userisloggedin ? MainApp() : Authenticate());
         }

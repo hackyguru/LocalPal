@@ -1,6 +1,5 @@
 import 'dart:ui';
 
-import 'package:bot_toast/bot_toast.dart';
 import 'package:chatApp/helper/Constants.dart';
 import 'package:chatApp/helper/authenticate.dart';
 import 'package:chatApp/helper/helperfunction.dart';
@@ -15,7 +14,6 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 
 class Home extends StatefulWidget {
   @override
@@ -130,7 +128,10 @@ class _HomeState extends State<Home> {
                   Container(
                     child: Text(
                       username,
-                      style: GoogleFonts.robotoMono(color: Colors.black, fontSize: 17, fontWeight: FontWeight.bold),
+                      style: GoogleFonts.robotoMono(
+                          color: Colors.black,
+                          fontSize: 17,
+                          fontWeight: FontWeight.bold),
                     ),
                   ),
                 ],
@@ -149,7 +150,7 @@ class _HomeState extends State<Home> {
       appBar: AppBar(
         backgroundColor: Color(0xFFEF5A4C),
         title: Text("Nearby People",
-        style: GoogleFonts.robotoMono(fontWeight: FontWeight.bold)),
+            style: GoogleFonts.robotoMono(fontWeight: FontWeight.bold)),
         actions: [
           IconButton(
               icon: Icon(Icons.exit_to_app),
@@ -161,8 +162,10 @@ class _HomeState extends State<Home> {
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Color(0xFFEF5A4C),
-          child: Icon(Icons.group_add,),
+          backgroundColor: Color(0xFFEF5A4C),
+          child: Icon(
+            Icons.group_add,
+          ),
           onPressed: () {
             Navigator.push(context,
                 MaterialPageRoute(builder: (context) => searchScreen()));

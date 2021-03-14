@@ -1,4 +1,3 @@
-import 'package:bot_toast/bot_toast.dart';
 import 'package:chatApp/helper/helperfunction.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:chatApp/models/user.dart';
@@ -7,7 +6,6 @@ import 'package:google_sign_in/google_sign_in.dart';
 
 class AuthMethods {
   final FirebaseAuth _auth = FirebaseAuth.instance;
-  
 
   User1 _usercheck(User user) {
     if (user != null) {
@@ -82,9 +80,6 @@ class AuthMethods {
 
   Future signOut() async {
     try {
-      BotToast.showText(
-        text: "logged out Successfully",
-      );
       HelperFunction.saveuserLoggedInSharedPreference(false);
       return await _auth.signOut();
     } catch (e) {

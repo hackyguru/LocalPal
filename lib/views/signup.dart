@@ -1,4 +1,3 @@
-import 'package:bot_toast/bot_toast.dart';
 import 'package:chatApp/helper/helperfunction.dart';
 import 'package:chatApp/services/auth.dart';
 import 'package:chatApp/services/database.dart';
@@ -42,13 +41,11 @@ class _SignUpState extends State<SignUp> {
         if (value == 0) {
           setState(() {
             isLoading = false;
-            BotToast.showText(text: "The password provided is too weak.");
           });
         } else if (value == 1) {
           setState(() {
             isLoading = false;
-            BotToast.showText(
-                text: "The account already exists for that email.");
+
             passwController.text = null;
           });
         } else if (value != null) {
@@ -311,7 +308,6 @@ class _SignUpState extends State<SignUp> {
                           ),
                         ),
                       ),
-                     
                     ],
                   ),
                 ),
